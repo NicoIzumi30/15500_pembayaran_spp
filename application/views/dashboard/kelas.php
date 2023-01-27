@@ -61,10 +61,12 @@
                                                     <i class="zmdi zmdi-delete"></i></i>
                                                 </a>
                                                 <a href="#" class="btn btn-warning" data-toggle="modal"
-                                                    data-target="#myModal"><i class="zmdi zmdi-edit"></i></i>
+                                                    data-target="#myModal<?= $class->id_kelas ?>"><i
+                                                        class="zmdi zmdi-edit"></i></i>
                                                 </a>
-                                                <div class="modal fade" id="myModal" tabindex="-1" role="dialog"
-                                                    style="display: none;" aria-hidden="true">
+                                                <div class="modal fade" id="myModal<?= $class->id_kelas ?>"
+                                                    tabindex="-1" role="dialog" style="display: none;"
+                                                    aria-hidden="true">
                                                     <div class="modal-dialog" role="document">
                                                         <div class="modal-content">
                                                             <div class="modal-header">

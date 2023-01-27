@@ -1,5 +1,5 @@
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Lilita+One&family=Secular+One&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Lilita+One&family=Secular+One&display=swap');
 </style>
 <section class="content">
     <div class="flash-data" data-flashdata="<?= $this->session->flashdata('flash'); ?>"></div>
@@ -14,8 +14,7 @@
                         </li>
                         <li class="breadcrumb-item active">Transaksi</li>
                     </ul>
-                    <button class="btn btn-primary btn-icon mobile_menu" type="button"><i
-                            class="zmdi zmdi-sort-amount-desc"></i></button>
+                    <button class="btn btn-primary btn-icon mobile_menu" type="button"><i class="zmdi zmdi-sort-amount-desc"></i></button>
                 </div>
                 <!-- <div class="col-lg-5 col-md-6 col-sm-12">
                     <button class="btn btn-primary btn-icon float-right right_icon_toggle_btn" type="button"><i
@@ -29,8 +28,7 @@
                     <div class="card">
                         <div class="body">
                             <div class="text-center mb-5">
-                                <img src="<?= base_url() ?>assets/images/user.png" class="rounded-circle"
-                                    alt="profile-image">
+                                <img src="<?= base_url() ?>assets/images/user.png" class="rounded-circle" alt="profile-image">
                             </div>
                             <small class="text-muted">Nama Siswa</small>
                             <p><?= $siswa['nama']; ?></p>
@@ -50,12 +48,12 @@
                             <small class="text-muted">SPP</small>
                             <p>Tahun <?= $siswa['tahun'] ?> - <?= number_format($siswa['nominal']) ?>/Bulan</p>
                             <?php if ($tagihan !== null) { ?>
-                            <hr>
-                            <small class="text-muted">Total Tagihan</small>
-                            <p>Rp. <?= number_format($tagihan['total_tagihan']) ?></p>
-                            <hr>
-                            <small class="text-muted">Kekurangan Tagihan</small>
-                            <p>Rp. <?= number_format($tagihan['kekurangan']) ?></p>
+                                <hr>
+                                <small class="text-muted">Total Tagihan</small>
+                                <p>Rp. <?= number_format($tagihan['total_tagihan']) ?></p>
+                                <hr>
+                                <small class="text-muted">Kekurangan Tagihan</small>
+                                <p>Rp. <?= number_format($tagihan['kekurangan']) ?></p>
                             <?php } ?>
                         </div>
                     </div>
@@ -78,27 +76,27 @@
                                 foreach ($bulan as $tagih) :
                                     $spp = $this->db->get_where('spp', ['id_spp' => $siswa['id_spp']])->row_array();
                                 ?>
-                                <tr>
-                                    <td><?= $no++; ?></td>
-                                    <td><?= $spp['tahun'] ?></td>
-                                    <td><?= $tagih->bulan; ?></td>
-                                    <td>
-                                        <?php if ($tagih->status == 'Dibayar') { ?>
-                                        <button class="btn btn-success">Dibayar</button>
-                                        <a href="#" class="btn btn-warning">Cetak</a>
-                                        <?php } else { ?>
-                                        <form action="<?= base_url('dashboard/pembayaran') ?>" method="post">
-                                            <input type="hidden" name="nisn" value="<?= $siswa['nisn'] ?>">
-                                            <input type="hidden" name="bulan" value="<?= $tagih->bulan; ?>">
-                                            <input type="hidden" name="tahun" value="<?= $spp['tahun']; ?>">
-                                            <input type="hidden" name="id_spp" value="<?= $spp['id_spp']; ?>">
-                                            <input type="hidden" name="id_bulan" value="<?= $tagih->id_bulan; ?>">
-                                            <button type="submit" class="btn btn-danger">Belum Dibayar</button>
-                                        </form>
-                                        <?php } ?>
+                                    <tr>
+                                        <td><?= $no++; ?></td>
+                                        <td><?= $spp['tahun'] ?></td>
+                                        <td><?= $tagih->bulan; ?></td>
+                                        <td>
+                                            <?php if ($tagih->status == 'Dibayar') { ?>
+                                                <button class="btn btn-success">Dibayar</button>
+                                                <a href="<?= base_url('dashboard/printpdf/' . $tagih->id_bulan) ?>" class="btn btn-warning">Cetak</a>
+                                            <?php } else { ?>
+                                                <form action="<?= base_url('dashboard/pembayaran') ?>" method="post">
+                                                    <input type="hidden" name="nisn" value="<?= $siswa['nisn'] ?>">
+                                                    <input type="hidden" name="bulan" value="<?= $tagih->bulan; ?>">
+                                                    <input type="hidden" name="tahun" value="<?= $spp['tahun']; ?>">
+                                                    <input type="hidden" name="id_spp" value="<?= $spp['id_spp']; ?>">
+                                                    <input type="hidden" name="id_bulan" value="<?= $tagih->id_bulan; ?>">
+                                                    <button type="submit" class="btn btn-danger">Belum Dibayar</button>
+                                                </form>
+                                            <?php } ?>
 
-                                    </td>
-                                </tr>
+                                        </td>
+                                    </tr>
                                 <?php endforeach ?>
                             </tbody>
                         </table>

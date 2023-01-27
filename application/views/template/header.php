@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <meta name="description" content="Responsive Bootstrap 4 and web Application ui kit.">
-    <title>Laporan Pembayaran SPP</title>
+    <title>Detail Siswa</title>
     <link rel="icon" href="<?= base_url() ?>assets/images/logo_.png" type="image/x-icon"> <!-- Favicon-->
     <link rel="stylesheet" href="<?= base_url() ?>assets/plugins/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="<?= base_url() ?>assets/plugins/fontawesome/css/fontawesome.min.css">
@@ -46,23 +46,36 @@
         </div>
         <div class="menu">
             <ul class="list">
+
                 <li>
                     <div class="user-info">
-                        <a class="image" href="profile.html"><img src="<?= base_url() ?>assets/images/profile_av.jpg"
+                        <a class="image" href="<?= base_url() ?>"><img src="<?= base_url() ?>assets/images/user.png"
                                 alt="User"></a>
                         <div class="detail">
+                            <?php if (!$this->session->userdata('nisn')) { ?>
                             <h4><?= $this->session->userdata('nama_petugas'); ?></h4>
                             <small><?= $this->session->userdata('level'); ?></small>
-
+                            <?php } else { ?>
+                            <h4><?= $siswa['nama'] ?></h4>
+                            <small><?= $siswa['nisn']; ?></small>
+                            <?php } ?>
                         </div>
                     </div>
                 </li>
+                <?php if ($this->session->userdata('level') == 'admin' && 'petugas') { ?>
                 <li><a href="<?= base_url('dashboard/index') ?>"><i
                             class="zmdi zmdi-home"></i><span>Dashboard</span></a>
                 </li>
-
+                <?php } ?>
+                <?php if ($this->session->userdata('level') == 'admin' && 'petugas') { ?>
                 <li><a href="<?= base_url('dashboard/profile') ?>"><i
                             class="zmdi zmdi-account"></i><span>Profile</span></a></li>
+                <?php } ?>
+                <?php if ($this->session->userdata('nisn')) { ?>
+                <li class="active"><a href="<?= base_url('siswa') ?>"><i class="zmdi zmdi-account"></i><span>Profile
+                            Siswa</span></a>
+                </li>
+                <?php } ?>
                 <?php if ($this->session->userdata('level') == 'admin') { ?>
                 <li><a href="<?= base_url('dashboard/petugas') ?>"><i
                             class="zmdi zmdi-accounts"></i><span>Petugas</span></a></li>
@@ -76,21 +89,32 @@
                     echo ' <li><a href="' . base_url('dashboard/spp') . '"><i class="zmdi zmdi-assignment"></i><span>SPP</span></a>
                     </li>';
                 } ?>
+
                 <?php if ($this->session->userdata('level') == 'admin') {
                     echo ' <li><a href="' . base_url('dashboard/siswa') . '"><i
                     class="zmdi zmdi-account-box-mail"></i><span>Siswa</span></a>
                 </li>';
                 } ?>
 
+                <?php if ($this->session->userdata('level') == 'admin' && 'petugas') { ?>
 
                 <li><a href="<?= base_url('dashboard/transaksi') ?>"><i
                             class="zmdi zmdi-paypal"></i><span>Transaksi</span></a>
                 </li>
+                <?php } ?>
                 <li><a href="javascript:void(0);" class="js-right-sidebar" title="Setting"><i
                             class="zmdi zmdi-settings zmdi-hc-spin"></i><span>Setting</span></a>
                 </li>
+                <?php if ($this->session->userdata('level') == 'admin' && 'petugas') { ?>
+
                 <li><a href="<?= base_url('auth/logout') ?>" class="mega-menu" title="Sign Out"><i
                             class="zmdi zmdi-power"></i><span>Logout</span></a></li>
+                <?php } ?>
+                <?php if ($this->session->userdata('nisn')) { ?>
+                <li><a href="<?= base_url('auth_siswa/logout') ?>" class="mega-menu" title="Sign Out"><i
+                            class="zmdi zmdi-power"></i><span>Logout</span></a></li>
+                <?php } ?>
+
             </ul>
         </div>
     </aside>

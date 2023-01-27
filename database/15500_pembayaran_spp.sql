@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 27 Jan 2023 pada 11.01
+-- Waktu pembuatan: 27 Jan 2023 pada 17.05
 -- Versi server: 10.1.38-MariaDB
 -- Versi PHP: 7.3.2
 
@@ -89,7 +89,7 @@ INSERT INTO `bulan` (`id_bulan`, `nisn`, `bulan`, `status`) VALUES
 (47, '01072007003', 'November', 'Belum Dibayar'),
 (48, '0107200700', 'Desember', 'Belum Dibayar'),
 (49, '0107200701', 'Januari', 'Dibayar'),
-(50, '0107200701', 'Februari', 'Belum Dibayar'),
+(50, '0107200701', 'Februari', 'Dibayar'),
 (51, '0107200701', 'Maret', 'Belum Dibayar'),
 (52, '0107200701', 'April', 'Belum Dibayar'),
 (53, '0107200701', 'Mei', 'Belum Dibayar'),
@@ -147,6 +147,7 @@ CREATE TABLE `pembayaran` (
   `bulan_bayar` varchar(8) NOT NULL,
   `tahun_bayar` varchar(4) NOT NULL,
   `id_spp` int(11) NOT NULL,
+  `id_bulan` int(11) NOT NULL,
   `jumlah_bayar` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -154,11 +155,12 @@ CREATE TABLE `pembayaran` (
 -- Dumping data untuk tabel `pembayaran`
 --
 
-INSERT INTO `pembayaran` (`id_pembayaran`, `id_petugas`, `nisn`, `tgl_bayar`, `bulan_bayar`, `tahun_bayar`, `id_spp`, `jumlah_bayar`) VALUES
-(3, 1, '3012200401', 'Wednesday 25 January 2023 - 04:12', 'Januari', '2024', 1, 1000000),
-(4, 1, '3012200401', 'Wednesday 25 January 2023 - 04:14', 'Januari', '2024', 1, 1000000),
-(5, 1, '3012200401', 'Wednesday 25 January 2023 - 06:08', 'Februari', '2024', 1, 1000000),
-(6, 1, '0107200701', 'Thursday 26 January 2023 - 14:59', 'Januari', '2025', 2, 1500000);
+INSERT INTO `pembayaran` (`id_pembayaran`, `id_petugas`, `nisn`, `tgl_bayar`, `bulan_bayar`, `tahun_bayar`, `id_spp`, `id_bulan`, `jumlah_bayar`) VALUES
+(3, 1, '3012200401', 'Wednesday 25 January 2023 - 04:12', 'Januari', '2024', 1, 0, 1000000),
+(4, 1, '3012200401', 'Wednesday 25 January 2023 - 04:14', 'Januari', '2024', 1, 0, 1000000),
+(5, 1, '3012200401', 'Wednesday 25 January 2023 - 06:08', 'Februari', '2024', 1, 0, 1000000),
+(6, 1, '0107200701', 'Thursday 26 January 2023 - 14:59', 'Januari', '2025', 2, 0, 1500000),
+(7, 1, '0107200701', 'Friday 27 January 2023 - 22:29', 'Februari', '2025', 2, 50, 1500000);
 
 -- --------------------------------------------------------
 
@@ -181,7 +183,7 @@ CREATE TABLE `petugas` (
 
 INSERT INTO `petugas` (`id_petugas`, `username`, `password`, `nama_petugas`, `level`, `created`) VALUES
 (1, 'heru', '$2y$10$DrsMKAI7KZtiD9DRaFv1/ue3KJtohfsDtjetDir6sIjzmk6gFlHoi', 'Heru Kristanto', 'admin', '2023-01-24'),
-(4, 'yrdyyrdy', '$2y$10$5MTpmI2w08PC.jmROZ7SFOyH6KTbWvZwDlscZ9U1oatt/.elNhF8O', 'yrdyyrdy', 'petugas', '2023-01-27');
+(5, 'niczumiii', '$2y$10$vPZYmOgcXpcTubpGHJtWgOifA4AYFkAldq87vgAurEiwX8XZNLQJS', 'Nico Izumi', 'petugas', '2023-01-27');
 
 -- --------------------------------------------------------
 
@@ -249,7 +251,7 @@ CREATE TABLE `tagihan` (
 
 INSERT INTO `tagihan` (`id_tagihan`, `nisn`, `total_tagihan`, `kekurangan`) VALUES
 (1, '0107200700', 18000000, 18000000),
-(2, '0107200701', 18000000, 16500000),
+(2, '0107200701', 18000000, 15000000),
 (3, '0563785347', 12000000, 12000000);
 
 -- --------------------------------------------------------
@@ -352,13 +354,13 @@ ALTER TABLE `kelas`
 -- AUTO_INCREMENT untuk tabel `pembayaran`
 --
 ALTER TABLE `pembayaran`
-  MODIFY `id_pembayaran` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_pembayaran` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT untuk tabel `petugas`
 --
 ALTER TABLE `petugas`
-  MODIFY `id_petugas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_petugas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT untuk tabel `spp`

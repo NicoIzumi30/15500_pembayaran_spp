@@ -585,6 +585,7 @@ class Dashboard extends CI_Controller
                 'bulan_bayar' => htmlspecialchars($this->input->post('bulan')),
                 'tahun_bayar' => htmlspecialchars($this->input->post('tahun')),
                 'id_spp' => $id_spp,
+                'id_bulan' => $id_bulan,
                 'jumlah_bayar' => htmlspecialchars($this->input->post('jumlah')),
             ];
             $query = $this->db->insert('pembayaran', $data);
@@ -616,8 +617,10 @@ class Dashboard extends CI_Controller
         $this->load->view('template/footer');
     }
 
-    public function printpdf()
+    public function printpdf($id_bulan)
     {
-        $this->load->view('template');
+        $data['siswa'] = $this->M_dashboard->pembayaranWhere($id_bulan);
+        // var_dump($data['siswa']);
+        $this->load->view('dashboard/print', $data);
     }
 }

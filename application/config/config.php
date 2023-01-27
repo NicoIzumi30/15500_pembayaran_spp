@@ -23,7 +23,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'http://192.168.212.27:8080/15500_pembayaran_spp/';
+$config['base_url'] = 'http://192.168.0.106:8080/15500_pembayaran_spp/';
 // $config['base_url'] = 'http://localhost:8080/15500_pembayaran_spp/';
 
 /*

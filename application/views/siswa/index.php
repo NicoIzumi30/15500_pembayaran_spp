@@ -81,18 +81,11 @@
                                     <td><?= $spp['tahun'] ?></td>
                                     <td><?= $tagih->bulan; ?></td>
                                     <td>
-                                        <?php if ($tagih->status == 'Dibayar') { ?>
-                                        <button class="btn btn-success">Dibayar</button>
-                                        <a href="#" class="btn btn-warning">Cetak</a>
+                                        <?php if ($tagih->status !== 'Dibayar') { ?>
+                                        <button class="btn btn-success">Lunas</button>
                                         <?php } else { ?>
-                                        <form action="<?= base_url('dashboard/pembayaran') ?>" method="post">
-                                            <input type="hidden" name="nisn" value="<?= $siswa['nisn'] ?>">
-                                            <input type="hidden" name="bulan" value="<?= $tagih->bulan; ?>">
-                                            <input type="hidden" name="tahun" value="<?= $spp['tahun']; ?>">
-                                            <input type="hidden" name="id_spp" value="<?= $spp['id_spp']; ?>">
-                                            <input type="hidden" name="id_bulan" value="<?= $tagih->id_bulan; ?>">
-                                            <button type="submit" class="btn btn-danger">Belum Dibayar</button>
-                                        </form>
+                                        <button type="" class="btn btn-danger">Belum Dibayar</button>
+
                                         <?php } ?>
 
                                     </td>
