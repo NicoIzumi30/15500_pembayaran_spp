@@ -42,7 +42,7 @@
                                         <tr>
                                             <th width=5%>No</th>
                                             <th>Tahun</th>
-                                            <th>Nominal</th>
+                                            <th>Besaran SPP /Bulan</th>
                                             <th width=10%>Action</th>
                                         </tr>
                                     </thead>

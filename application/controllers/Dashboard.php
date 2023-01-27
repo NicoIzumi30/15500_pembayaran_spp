@@ -530,8 +530,9 @@ class Dashboard extends CI_Controller
         if ($nisn == null) {
             redirect('dashboard/transaksi');
         }
-        $data['siswa'] = $this->db->get_where('siswa', ['nisn' => $nisn])->row_array();
-        $data['tagihan'] = $this->db->get_where('bulan', ['nisn' => $nisn])->result();
+        $data['siswa'] = $this->M_dashboard->getSiswaWhere($nisn);
+        $data['bulan'] = $this->db->get_where('bulan', ['nisn' => $nisn])->result();
+        $data['tagihan'] = $this->db->get_where('tagihan', ['nisn' => $nisn])->row_array();
         $this->load->view('template/header');
         $this->load->view('dashboard/detail_tagihan', $data);
         $this->load->view('template/footer');
@@ -615,18 +616,8 @@ class Dashboard extends CI_Controller
         $this->load->view('template/footer');
     }
 
-    public function printLaporan()
+    public function printpdf()
     {
-        $this->load->view('dashboard/pdf_laporan');
-        // Get output html
-        $html = $this->output->get_output();
-
-        // Load library
-        $this->load->library('dompdf_gen');
-
-        // Convert to PDF
-        $this->dompdf->load_html($html);
-        $this->dompdf->render();
-        $this->dompdf->stream("Laporan_Pembayaran_SPP.pdf");
+        $this->load->view('template');
     }
 }

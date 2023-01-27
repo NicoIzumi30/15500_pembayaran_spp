@@ -49,6 +49,12 @@
                             <hr>
                             <small class="text-muted">SPP</small>
                             <p>Tahun <?= $siswa['tahun'] ?> - <?= number_format($siswa['nominal']) ?>/Bulan</p>
+                            <hr>
+                            <small class="text-muted">Total Tagihan</small>
+                            <p>Rp. <?= number_format($tagihan['total_tagihan']) ?></p>
+                            <hr>
+                            <small class="text-muted">Kekurangan Tagihan</small>
+                            <p>Rp. <?= number_format($tagihan['kekurangan']) ?></p>
                         </div>
                     </div>
 
@@ -67,7 +73,7 @@
                             <tbody>
                                 <?php
                                 $no = 1;
-                                foreach ($tagihan as $tagih) :
+                                foreach ($bulan as $tagih) :
                                     $spp = $this->db->get_where('spp', ['id_spp' => $siswa['id_spp']])->row_array();
                                 ?>
                                 <tr>
