@@ -23,12 +23,10 @@ defined('BASEPATH') or exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-<<<<<<< HEAD
-=======
-$config['base_url'] = 'http://localhost/15500_pembayaran_spp/';
->>>>>>> 7b57b58c759b59d30bd651304b55b59882700fc9
-// $config['base_url'] = 'http://localhost:8080/15500_pembayaran_spp/';
 
+$config['base_url'] = ((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == "on") ? "https" : "http");
+$config['base_url'] .= "://" . $_SERVER['HTTP_HOST'];
+$config['base_url'] .= str_replace(basename($_SERVER['SCRIPT_NAME']), "", $_SERVER['SCRIPT_NAME']);
 /*
 |--------------------------------------------------------------------------
 | Index File

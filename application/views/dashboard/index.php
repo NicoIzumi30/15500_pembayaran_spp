@@ -40,39 +40,49 @@
                         </a>
                     </div>
                     <div class="col-md-12">
-                        <div class="card widget_2 big_icon sales">
-                            <div class="body bg-warning text-white">
-                                <h6>Siswa</h6>
-                                <h2 class="text-white"><?= count($siswa) ?> <small class="info">Data Siswa</small></h2>
+                        <a href="<?= base_url('dashboard/siswa') ?>">
+                            <div class="card widget_2 big_icon sales">
+                                <div class="body bg-warning text-white">
+                                    <h6>Siswa</h6>
+                                    <h2 class="text-white"><?= count($siswa) ?> <small class="info">Data Siswa</small>
+                                    </h2>
+                                </div>
                             </div>
-                        </div>
+                        </a>
                     </div>
                     <div class="col-md-12">
-                        <div class="card widget_2 big_icon domains">
-                            <div class="body bg-primary text-white">
-                                <h6>SPP</h6>
-                                <h2 class="text-white"><?= count($spp) ?> <small class="info">Data SPP</small></h2>
+                        <a href="<?= base_url('dashboard/spp') ?>">
+                            <div class="card widget_2 big_icon domains">
+                                <div class="body bg-primary text-white">
+                                    <h6>SPP</h6>
+                                    <h2 class="text-white"><?= count($spp) ?> <small class="info">Data SPP</small></h2>
+                                </div>
                             </div>
-                        </div>
+                        </a>
                     </div>
                     <div class="col-md-12">
-                        <div class="card widget_2 big_icon email">
-                            <div class="body bg-info text-white">
-                                <h6>Kelas</h6>
-                                <h2 class="text-white"><?= count($kelas) ?> <small class="info">Data Kelas</small></h2>
+                        <a href="<?= base_url('dashboard/kelas') ?>">
+                            <div class="card widget_2 big_icon email">
+                                <div class="body bg-info text-white">
+                                    <h6>Kelas</h6>
+                                    <h2 class="text-white"><?= count($kelas) ?> <small class="info">Data Kelas</small>
+                                    </h2>
 
+                                </div>
                             </div>
-                        </div>
+                        </a>
                     </div>
                     <?php } ?>
                     <div class="col-md-12">
-                        <div class="card widget_2 big_icon domains">
-                            <div class="body bg-success text-white">
-                                <h6>Laporan Pembayaran</h6>
-                                <h2 class="text-white"><?= count($pembayaran) ?> <small class="info">Data Laporan
-                                        Pembayaran</small></h2>
+                        <a href="<?= base_url('dashboard/laporan') ?>">
+                            <div class="card widget_2 big_icon domains">
+                                <div class="body bg-success text-white">
+                                    <h6>Laporan Pembayaran</h6>
+                                    <h2 class="text-white"><?= count($pembayaran) ?> <small class="info">Data Laporan
+                                            Pembayaran</small></h2>
+                                </div>
                             </div>
-                        </div>
+                        </a>
                     </div>
 
 

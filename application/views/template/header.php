@@ -1,5 +1,10 @@
 <!doctype html>
 <html class="no-js " lang="en">
+<?php if (isset($title)) {
+    $title = $title;
+} else {
+    $title = 'Pembayaran SPP';
+} ?>
 
 <head>
     <meta charset="utf-8">
@@ -100,6 +105,12 @@
 
                 <li><a href="<?= base_url('dashboard/transaksi') ?>"><i
                             class="zmdi zmdi-paypal"></i><span>Transaksi</span></a>
+                </li>
+                <?php } ?>
+                <?php if ($this->session->userdata('level') == 'admin' && 'petugas') { ?>
+
+                <li><a href="<?= base_url('dashboard/laporan') ?>"><i class="zmdi zmdi-task-list"></i><span>Laporan
+                            Transaksi</span></a>
                 </li>
                 <?php } ?>
                 <li><a href="javascript:void(0);" class="js-right-sidebar" title="Setting"><i

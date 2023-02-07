@@ -7,6 +7,8 @@ class Auth_siswa extends CI_Controller
     {
         if ($this->session->userdata('nisn')) {
             redirect('siswa');
+        } elseif ($this->session->userdata('username')) {
+            redirect('dashboard');
         }
         $this->form_validation->set_rules('nisn', 'NISN', 'required|trim');
         $this->form_validation->set_rules('password', 'password', 'trim|required');
