@@ -81,7 +81,7 @@
                                     <td><?= $spp['tahun'] ?></td>
                                     <td><?= $tagih->bulan; ?></td>
                                     <td>
-                                        <?php if ($tagih->status !== 'Dibayar') { ?>
+                                        <?php if ($tagih->status == 'Dibayar') { ?>
                                         <button class="btn btn-success">Lunas</button>
                                         <?php } else { ?>
                                         <button type="" class="btn btn-danger">Belum Dibayar</button>

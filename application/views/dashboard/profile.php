@@ -103,21 +103,3 @@ $user = $this->db->get_where('petugas', ['id_petugas' => $this->session->userdat
         </div>
     </div>
 </section>
-<!-- <?php
-        $namaLengkap = $user['nama_petugas'];
-        $nama = explode(' ', $namaLengkap);
-        $nama1 = $nama[0];
-        $bol = isset($nama[1]);
-        if ($bol) {
-            $nama2 = $nama[1];
-        } else {
-            $nama2  = '';
-        }
-        ?> -->
-<!-- <script>
-var a = '<?= $nama1 ?>';
-var b = '<?= $nama2 ?>';
-var rest = a.substring(0, 1)
-var rest2 = b.substring(0, 1)
-document.getElementById("huruf").innerHTML = rest + rest2
-</script> -->

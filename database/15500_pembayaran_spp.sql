@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 27 Jan 2023 pada 17.05
--- Versi server: 10.1.38-MariaDB
--- Versi PHP: 7.3.2
+-- Waktu pembuatan: 08 Feb 2023 pada 08.47
+-- Versi server: 10.4.24-MariaDB
+-- Versi PHP: 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -30,7 +29,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `bulan` (
   `id_bulan` int(11) NOT NULL,
-  `nisn` varchar(16) NOT NULL,
+  `nisn` int(11) NOT NULL,
   `bulan` varchar(16) NOT NULL,
   `status` enum('Dibayar','Belum Dibayar','','') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -40,78 +39,126 @@ CREATE TABLE `bulan` (
 --
 
 INSERT INTO `bulan` (`id_bulan`, `nisn`, `bulan`, `status`) VALUES
-(1, '34234234', 'Januari', 'Belum Dibayar'),
-(2, '34234234', 'Februari', 'Belum Dibayar'),
-(3, '34234234', 'Maret', 'Belum Dibayar'),
-(4, '34234234', 'April', 'Belum Dibayar'),
-(5, '34234234', 'Mei', 'Belum Dibayar'),
-(6, '', 'Juni', 'Belum Dibayar'),
-(7, '', 'Juli', 'Belum Dibayar'),
-(8, '34234234', 'Agustus', 'Belum Dibayar'),
-(9, '34234234', 'September', 'Belum Dibayar'),
-(10, '34234234', 'Oktober', 'Belum Dibayar'),
-(11, '34234234', 'November', 'Belum Dibayar'),
-(12, '34234234', 'Desember', 'Belum Dibayar'),
-(13, '3012200401', 'Januari', 'Dibayar'),
-(14, '3012200401', 'Februari', 'Dibayar'),
-(15, '3012200401', 'Maret', 'Belum Dibayar'),
-(16, '3012200401', 'April', 'Belum Dibayar'),
-(17, '3012200401', 'Mei', 'Belum Dibayar'),
-(18, '3012200401', 'Juni', 'Belum Dibayar'),
-(19, '3012200401', 'Juli', 'Belum Dibayar'),
-(20, '3012200401', 'Agustus', 'Belum Dibayar'),
-(21, '3012200401', 'September', 'Belum Dibayar'),
-(22, '3012200401', 'Oktober', 'Belum Dibayar'),
-(23, '3012200401', 'November', 'Belum Dibayar'),
-(24, '3012200401', 'Desember', 'Belum Dibayar'),
-(25, '123', 'Januari', 'Belum Dibayar'),
-(26, '123', 'Februari', 'Belum Dibayar'),
-(27, '123', 'Maret', 'Belum Dibayar'),
-(28, '123', 'April', 'Belum Dibayar'),
-(29, '123', 'Mei', 'Belum Dibayar'),
-(30, '123', 'Juni', 'Belum Dibayar'),
-(31, '123', 'Juli', 'Belum Dibayar'),
-(32, '123', 'Agustus', 'Belum Dibayar'),
-(33, '123', 'September', 'Belum Dibayar'),
-(34, '123', 'Oktober', 'Belum Dibayar'),
-(35, '123', 'November', 'Belum Dibayar'),
-(36, '123', 'Desember', 'Belum Dibayar'),
-(37, '01072007003', 'Januari', 'Belum Dibayar'),
-(38, '01072007003', 'Februari', 'Belum Dibayar'),
-(39, '01072007003', 'Maret', 'Belum Dibayar'),
-(40, '01072007003', 'April', 'Belum Dibayar'),
-(41, '01072007003', 'Mei', 'Belum Dibayar'),
-(42, '01072007003', 'Juni', 'Belum Dibayar'),
-(43, '01072007003', 'Juli', 'Belum Dibayar'),
-(44, '01072007003', 'Agustus', 'Belum Dibayar'),
-(45, '01072007003', 'September', 'Belum Dibayar'),
-(46, '01072007003', 'Oktober', 'Belum Dibayar'),
-(47, '01072007003', 'November', 'Belum Dibayar'),
-(48, '0107200700', 'Desember', 'Belum Dibayar'),
-(49, '0107200701', 'Januari', 'Dibayar'),
-(50, '0107200701', 'Februari', 'Dibayar'),
-(51, '0107200701', 'Maret', 'Belum Dibayar'),
-(52, '0107200701', 'April', 'Belum Dibayar'),
-(53, '0107200701', 'Mei', 'Belum Dibayar'),
-(54, '0107200701', 'Juni', 'Belum Dibayar'),
-(55, '0107200701', 'Juli', 'Belum Dibayar'),
-(56, '0107200701', 'Agustus', 'Belum Dibayar'),
-(57, '0107200701', 'September', 'Belum Dibayar'),
-(58, '0107200701', 'Oktober', 'Belum Dibayar'),
-(59, '0107200701', 'November', 'Belum Dibayar'),
-(60, '0107200701', 'Desember', 'Belum Dibayar'),
-(61, '0563785347', 'Januari', 'Belum Dibayar'),
-(62, '0563785347', 'Februari', 'Belum Dibayar'),
-(63, '0563785347', 'Maret', 'Belum Dibayar'),
-(64, '0563785347', 'April', 'Belum Dibayar'),
-(65, '0563785347', 'Mei', 'Belum Dibayar'),
-(66, '0563785347', 'Juni', 'Belum Dibayar'),
-(67, '0563785347', 'Juli', 'Belum Dibayar'),
-(68, '0563785347', 'Agustus', 'Belum Dibayar'),
-(69, '0563785347', 'September', 'Belum Dibayar'),
-(70, '0563785347', 'Oktober', 'Belum Dibayar'),
-(71, '0563785347', 'November', 'Belum Dibayar'),
-(72, '0563785347', 'Desember', 'Belum Dibayar');
+(1, 52318283, 'Januari', 'Belum Dibayar'),
+(2, 52318283, 'Februari', 'Belum Dibayar'),
+(3, 52318283, 'Maret', 'Belum Dibayar'),
+(4, 52318283, 'April', 'Belum Dibayar'),
+(5, 52318283, 'Mei', 'Belum Dibayar'),
+(6, 52318283, 'Juni', 'Belum Dibayar'),
+(7, 52318283, 'Juli', 'Belum Dibayar'),
+(8, 52318283, 'Agustus', 'Belum Dibayar'),
+(9, 52318283, 'September', 'Belum Dibayar'),
+(10, 52318283, 'Oktober', 'Belum Dibayar'),
+(11, 52318283, 'November', 'Belum Dibayar'),
+(12, 52318283, 'Desember', 'Belum Dibayar'),
+(13, 58816673, 'Januari', 'Belum Dibayar'),
+(14, 58816673, 'Februari', 'Belum Dibayar'),
+(15, 58816673, 'Maret', 'Belum Dibayar'),
+(16, 58816673, 'April', 'Belum Dibayar'),
+(17, 58816673, 'Mei', 'Belum Dibayar'),
+(18, 58816673, 'Juni', 'Belum Dibayar'),
+(19, 58816673, 'Juli', 'Belum Dibayar'),
+(20, 58816673, 'Agustus', 'Belum Dibayar'),
+(21, 58816673, 'September', 'Belum Dibayar'),
+(22, 58816673, 'Oktober', 'Belum Dibayar'),
+(23, 58816673, 'November', 'Belum Dibayar'),
+(24, 58816673, 'Desember', 'Belum Dibayar'),
+(25, 66273064, 'Januari', 'Belum Dibayar'),
+(26, 66273064, 'Februari', 'Belum Dibayar'),
+(27, 66273064, 'Maret', 'Belum Dibayar'),
+(28, 66273064, 'April', 'Belum Dibayar'),
+(29, 66273064, 'Mei', 'Belum Dibayar'),
+(30, 66273064, 'Juni', 'Belum Dibayar'),
+(31, 66273064, 'Juli', 'Belum Dibayar'),
+(32, 66273064, 'Agustus', 'Belum Dibayar'),
+(33, 66273064, 'September', 'Belum Dibayar'),
+(34, 66273064, 'Oktober', 'Belum Dibayar'),
+(35, 66273064, 'November', 'Belum Dibayar'),
+(36, 66273064, 'Desember', 'Belum Dibayar'),
+(37, 58310883, 'Januari', 'Belum Dibayar'),
+(38, 58310883, 'Februari', 'Belum Dibayar'),
+(39, 58310883, 'Maret', 'Belum Dibayar'),
+(40, 58310883, 'April', 'Belum Dibayar'),
+(41, 58310883, 'Mei', 'Belum Dibayar'),
+(42, 58310883, 'Juni', 'Belum Dibayar'),
+(43, 58310883, 'Juli', 'Belum Dibayar'),
+(44, 58310883, 'Agustus', 'Belum Dibayar'),
+(45, 58310883, 'September', 'Belum Dibayar'),
+(46, 58310883, 'Oktober', 'Belum Dibayar'),
+(47, 58310883, 'November', 'Belum Dibayar'),
+(48, 58310883, 'Desember', 'Belum Dibayar'),
+(49, 68021625, 'Januari', 'Dibayar'),
+(50, 68021625, 'Februari', 'Belum Dibayar'),
+(51, 68021625, 'Maret', 'Belum Dibayar'),
+(52, 68021625, 'April', 'Belum Dibayar'),
+(53, 68021625, 'Mei', 'Belum Dibayar'),
+(54, 68021625, 'Juni', 'Belum Dibayar'),
+(55, 68021625, 'Juli', 'Belum Dibayar'),
+(56, 68021625, 'Agustus', 'Belum Dibayar'),
+(57, 68021625, 'September', 'Belum Dibayar'),
+(58, 68021625, 'Oktober', 'Belum Dibayar'),
+(59, 68021625, 'November', 'Belum Dibayar'),
+(60, 68021625, 'Desember', 'Belum Dibayar'),
+(61, 56091655, 'Januari', 'Belum Dibayar'),
+(62, 56091655, 'Februari', 'Belum Dibayar'),
+(63, 56091655, 'Maret', 'Belum Dibayar'),
+(64, 56091655, 'April', 'Belum Dibayar'),
+(65, 56091655, 'Mei', 'Belum Dibayar'),
+(66, 56091655, 'Juni', 'Belum Dibayar'),
+(67, 56091655, 'Juli', 'Belum Dibayar'),
+(68, 56091655, 'Agustus', 'Belum Dibayar'),
+(69, 56091655, 'September', 'Belum Dibayar'),
+(70, 56091655, 'Oktober', 'Belum Dibayar'),
+(71, 56091655, 'November', 'Belum Dibayar'),
+(72, 56091655, 'Desember', 'Belum Dibayar'),
+(73, 58324928, 'Januari', 'Belum Dibayar'),
+(74, 58324928, 'Februari', 'Belum Dibayar'),
+(75, 58324928, 'Maret', 'Belum Dibayar'),
+(76, 58324928, 'April', 'Belum Dibayar'),
+(77, 58324928, 'Mei', 'Belum Dibayar'),
+(78, 58324928, 'Juni', 'Belum Dibayar'),
+(79, 58324928, 'Juli', 'Belum Dibayar'),
+(80, 58324928, 'Agustus', 'Belum Dibayar'),
+(81, 58324928, 'September', 'Belum Dibayar'),
+(82, 58324928, 'Oktober', 'Belum Dibayar'),
+(83, 58324928, 'November', 'Belum Dibayar'),
+(84, 58324928, 'Desember', 'Belum Dibayar'),
+(85, 52683167, 'Januari', 'Belum Dibayar'),
+(86, 52683167, 'Februari', 'Belum Dibayar'),
+(87, 52683167, 'Maret', 'Belum Dibayar'),
+(88, 52683167, 'April', 'Belum Dibayar'),
+(89, 52683167, 'Mei', 'Belum Dibayar'),
+(90, 52683167, 'Juni', 'Belum Dibayar'),
+(91, 52683167, 'Juli', 'Belum Dibayar'),
+(92, 52683167, 'Agustus', 'Belum Dibayar'),
+(93, 52683167, 'September', 'Belum Dibayar'),
+(94, 52683167, 'Oktober', 'Belum Dibayar'),
+(95, 52683167, 'November', 'Belum Dibayar'),
+(96, 52683167, 'Desember', 'Belum Dibayar'),
+(97, 65096194, 'Januari', 'Belum Dibayar'),
+(98, 65096194, 'Februari', 'Belum Dibayar'),
+(99, 65096194, 'Maret', 'Belum Dibayar'),
+(100, 65096194, 'April', 'Belum Dibayar'),
+(101, 65096194, 'Mei', 'Belum Dibayar'),
+(102, 65096194, 'Juni', 'Belum Dibayar'),
+(103, 65096194, 'Juli', 'Belum Dibayar'),
+(104, 65096194, 'Agustus', 'Belum Dibayar'),
+(105, 65096194, 'September', 'Belum Dibayar'),
+(106, 65096194, 'Oktober', 'Belum Dibayar'),
+(107, 65096194, 'November', 'Belum Dibayar'),
+(108, 65096194, 'Desember', 'Belum Dibayar'),
+(109, 68293711, 'Januari', 'Belum Dibayar'),
+(110, 68293711, 'Februari', 'Belum Dibayar'),
+(111, 68293711, 'Maret', 'Belum Dibayar'),
+(112, 68293711, 'April', 'Belum Dibayar'),
+(113, 68293711, 'Mei', 'Belum Dibayar'),
+(114, 68293711, 'Juni', 'Belum Dibayar'),
+(115, 68293711, 'Juli', 'Belum Dibayar'),
+(116, 68293711, 'Agustus', 'Belum Dibayar'),
+(117, 68293711, 'September', 'Belum Dibayar'),
+(118, 68293711, 'Oktober', 'Belum Dibayar'),
+(119, 68293711, 'November', 'Belum Dibayar'),
+(120, 68293711, 'Desember', 'Belum Dibayar');
 
 -- --------------------------------------------------------
 
@@ -130,8 +177,41 @@ CREATE TABLE `kelas` (
 --
 
 INSERT INTO `kelas` (`id_kelas`, `nama_kelas`, `kompetensi_keahlian`) VALUES
-(1, 'XII RPL23', 'Rekayasa Perangkat Lunak'),
-(2, 'XII RPL1', 'Rekayasa Perangkat Lunak');
+(1, 'XII RPL 1', 'Rekayasa Perangkat Lunak'),
+(2, 'XII RPL 2', 'Rekayasa Perangkat Lunak'),
+(3, 'XII TKJ 1', 'Teknik Komputer dan Jaringan'),
+(4, 'XII TKJ2', 'Teknik Komputer dan Jaringan'),
+(5, 'XII MM 1', 'Multimedia'),
+(6, 'XII MM 2', 'Multimedia');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `logs`
+--
+
+CREATE TABLE `logs` (
+  `id_logs` int(11) NOT NULL,
+  `username` varchar(64) NOT NULL,
+  `login` varchar(64) NOT NULL,
+  `logout` varchar(64) NOT NULL,
+  `level` varchar(32) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `logs`
+--
+
+INSERT INTO `logs` (`id_logs`, `username`, `login`, `logout`, `level`) VALUES
+(1, 'herubu_', '08-Feb-2023 03:13:25 AM', '-', 'admin'),
+(2, 'herubu_', '08-02-2023 03:20:22 AM', '08-02-2023 03:23:21 AM', 'admin'),
+(3, 'herubu_', '08-02-2023 09:24:55 AM', '08-02-2023 09:24:58 AM', 'admin'),
+(4, 'herubu_', '08-02-2023 09:32:47 AM', '08-02-2023 09:37:03 AM', 'admin'),
+(5, 'herubu_', '08-02-2023 10:41:31 AM', '08-02-2023 11:06:45 AM', 'admin'),
+(6, '58310883', '08-02-2023 05:07:12 AM', '-', 'siswa'),
+(7, 'herubu_', '08-02-2023 11:08:11 AM', '-', 'admin'),
+(8, '58310883', '08-02-2023 05:11:28 AM', '08-02-2023 11:12:01 AM', 'siswa'),
+(9, 'herubu_', '08-02-2023 11:36:58 AM', '-', 'admin');
 
 -- --------------------------------------------------------
 
@@ -142,7 +222,7 @@ INSERT INTO `kelas` (`id_kelas`, `nama_kelas`, `kompetensi_keahlian`) VALUES
 CREATE TABLE `pembayaran` (
   `id_pembayaran` int(11) NOT NULL,
   `id_petugas` int(11) NOT NULL,
-  `nisn` varchar(10) NOT NULL,
+  `nisn` int(11) NOT NULL,
   `tgl_bayar` varchar(128) NOT NULL,
   `bulan_bayar` varchar(8) NOT NULL,
   `tahun_bayar` varchar(4) NOT NULL,
@@ -156,11 +236,7 @@ CREATE TABLE `pembayaran` (
 --
 
 INSERT INTO `pembayaran` (`id_pembayaran`, `id_petugas`, `nisn`, `tgl_bayar`, `bulan_bayar`, `tahun_bayar`, `id_spp`, `id_bulan`, `jumlah_bayar`) VALUES
-(3, 1, '3012200401', 'Wednesday 25 January 2023 - 04:12', 'Januari', '2024', 1, 0, 1000000),
-(4, 1, '3012200401', 'Wednesday 25 January 2023 - 04:14', 'Januari', '2024', 1, 0, 1000000),
-(5, 1, '3012200401', 'Wednesday 25 January 2023 - 06:08', 'Februari', '2024', 1, 0, 1000000),
-(6, 1, '0107200701', 'Thursday 26 January 2023 - 14:59', 'Januari', '2025', 2, 0, 1500000),
-(7, 1, '0107200701', 'Friday 27 January 2023 - 22:29', 'Februari', '2025', 2, 50, 1500000);
+(1, 1, 68021625, 'Wednesday 08 February 2023 - 11:37', 'Januari', '2020', 1, 49, 1400000);
 
 -- --------------------------------------------------------
 
@@ -182,8 +258,7 @@ CREATE TABLE `petugas` (
 --
 
 INSERT INTO `petugas` (`id_petugas`, `username`, `password`, `nama_petugas`, `level`, `created`) VALUES
-(1, 'heru', '$2y$10$DrsMKAI7KZtiD9DRaFv1/ue3KJtohfsDtjetDir6sIjzmk6gFlHoi', 'Heru Kristanto', 'admin', '2023-01-24'),
-(5, 'niczumiii', '$2y$10$vPZYmOgcXpcTubpGHJtWgOifA4AYFkAldq87vgAurEiwX8XZNLQJS', 'Nico Izumi', 'petugas', '2023-01-27');
+(1, 'herubu_', '$2y$10$KQt/ILsAUIYGjtVKbYau/uieqpCN222uUMaIIVq9sCvuxkWxvGYDu', 'Heru Kristanto', 'admin', '2023-01-24');
 
 -- --------------------------------------------------------
 
@@ -192,7 +267,7 @@ INSERT INTO `petugas` (`id_petugas`, `username`, `password`, `nama_petugas`, `le
 --
 
 CREATE TABLE `siswa` (
-  `nisn` char(15) NOT NULL,
+  `nisn` int(11) NOT NULL,
   `nis` char(8) NOT NULL,
   `nama` varchar(50) NOT NULL,
   `id_kelas` int(11) NOT NULL,
@@ -206,11 +281,16 @@ CREATE TABLE `siswa` (
 --
 
 INSERT INTO `siswa` (`nisn`, `nis`, `nama`, `id_kelas`, `alamat`, `no_telp`, `id_spp`) VALUES
-('1234567890', '15500', 'Heru Kristanto', 2, 'Jl Parangtritis KM 21 ', '085703073753', 1),
-('181910141', '15504', 'Likansiwa', 1, 'Jl harapan', '08327328746', 1),
-('3012200401', '15540', 'Heru Kristanto', 1, 'Jalan Mana taaa', '0898728913213', 1),
-('0107200701', '12034', 'Putri Melati Arum', 2, 'Jl samas ', '098732983212', 2),
-('0563785347', '18898', 'jokowi ', 1, 'jalan banteng merah', '0856876543455', 1);
+(52318283, '5014', 'AHMAD FAIQ ALDINO', 1, 'Psr Melawai Bl A Los 1, Dki Jakarta', '089675839108', 1),
+(58816673, '5015', 'AIKSA PUTRI PRASETYA', 1, 'Jl Daan Mogot 59, Sulawesi Utara', '08996906443', 1),
+(66273064, '5023', 'ANGGITA CHAILLILA HAPSARI', 1, 'Jl Laksda M Nazir 11 Bl H, Jawa Timur', '089523641376', 1),
+(58310883, '5076', 'MUHAMMAD AZMI MAHASIN', 2, 'Jl Penggilingan Bl B/90-91, Dki Jakarta', '083843069913', 1),
+(68021625, '5100', 'OLIVIA LATIVAH', 2, 'Jl Teuku Umar 112, Bali', '082118325367', 1),
+(56091655, '5135', 'ZALFA NURLAILA', 2, 'Jl Raya Pd Gede 16, Dki Jakarta', '081216221775', 1),
+(58324928, '5044', 'CLARA INDRI LISTIYANI', 3, 'Jl Danau Sunter Slt 3, Dki Jakarta', '081216318350', 1),
+(52683167, '5032', 'ASMI MUFIDA', 3, 'Jl MH Thamrin 14, Dki Jakarta', '081219496485', 1),
+(65096194, '5138', 'DIMAS ANDREAN', 3, 'l Perak Brt 263, Jawa Timur', '081219550857', 1),
+(68293711, '5097', 'NIHA NURUL QOLBINA', 4, 'Jl Made Lakarsantri, Jawa Timur', '081222483287', 1);
 
 -- --------------------------------------------------------
 
@@ -229,8 +309,9 @@ CREATE TABLE `spp` (
 --
 
 INSERT INTO `spp` (`id_spp`, `tahun`, `nominal`) VALUES
-(1, 2024, 1000000),
-(2, 2025, 1500000);
+(1, 2020, 1400000),
+(2, 2021, 1500000),
+(3, 2022, 1700000);
 
 -- --------------------------------------------------------
 
@@ -240,7 +321,7 @@ INSERT INTO `spp` (`id_spp`, `tahun`, `nominal`) VALUES
 
 CREATE TABLE `tagihan` (
   `id_tagihan` int(11) NOT NULL,
-  `nisn` varchar(10) NOT NULL,
+  `nisn` int(11) NOT NULL,
   `total_tagihan` int(11) NOT NULL,
   `kekurangan` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -250,9 +331,16 @@ CREATE TABLE `tagihan` (
 --
 
 INSERT INTO `tagihan` (`id_tagihan`, `nisn`, `total_tagihan`, `kekurangan`) VALUES
-(1, '0107200700', 18000000, 18000000),
-(2, '0107200701', 18000000, 15000000),
-(3, '0563785347', 12000000, 12000000);
+(1, 52318283, 16800000, 16800000),
+(2, 58816673, 16800000, 16800000),
+(3, 66273064, 16800000, 16800000),
+(4, 58310883, 16800000, 16800000),
+(5, 68021625, 16800000, 15400000),
+(6, 56091655, 16800000, 16800000),
+(7, 58324928, 16800000, 16800000),
+(8, 52683167, 16800000, 16800000),
+(9, 65096194, 16800000, 16800000),
+(10, 68293711, 16800000, 16800000);
 
 -- --------------------------------------------------------
 
@@ -262,7 +350,7 @@ INSERT INTO `tagihan` (`id_tagihan`, `nisn`, `total_tagihan`, `kekurangan`) VALU
 
 CREATE TABLE `_siswa` (
   `id` int(11) NOT NULL,
-  `nisn` varchar(10) NOT NULL,
+  `nisn` int(11) NOT NULL,
   `password` varchar(64) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -271,13 +359,16 @@ CREATE TABLE `_siswa` (
 --
 
 INSERT INTO `_siswa` (`id`, `nisn`, `password`) VALUES
-(1, '181910141', '$2y$10$SrgsQqHgNobQwh/C8vT8ue/1Qge.iBEBYgErW5rp81cXIaK42KU26'),
-(2, '34234234', '$2y$10$HbjHJJ60AiSrGBM2QpoODu/RHySnNUdj5do3kQWvjzaUACvO.DSda'),
-(3, '3012200401', '$2y$10$qWtraRex3lcnlRjz6dIrOuTp94aQkphSjcj2x/W1Vi9RIIZDAUh8u'),
-(4, '123', '$2y$10$fFXo0v94VVhLkHwy/g8H5egX1GJcDeMY89c/aGwfsHGR4I.lAc4E6'),
-(5, '0107200700', '$2y$10$K3g/K6Dsmb.YyNDctLP/XeBKIbzfcL88axroJMKaSGipd3h24rIfS'),
-(6, '0107200701', '$2y$10$RJmw8UqpME5pkyDuA4vMqezNozmoDCLKpmTLxA22nj.UTtU6uKBTy'),
-(7, '0563785347', '$2y$10$qa18Kw7YB/w8QfZfv/DKKOPq5CEjChrtVCFJWWeN2fAyeSAdwJZlS');
+(1, 52318283, '$2y$10$5/1FN1CGaXM/8D.zZ/Kq6.uwvPpwu7BR/O8fma3zMOsNuLbyMrOXi'),
+(2, 58816673, '$2y$10$HV.IBRCTS2/szCJ6AJg3ueECIQz0lmqP3QwDwsgjVk9F9VTNrzE92'),
+(3, 66273064, '$2y$10$94352b35L0B/tRJkqolUW.QqShpAqtSlKzxtysXN0YhUKJtc/61vC'),
+(4, 58310883, '$2y$10$8p6x.ilj3FtZPSlg7HQNfelWRukPr0gO2C8Pqil5QJATroTVKuHW6'),
+(5, 68021625, '$2y$10$CkxyacLOD81DLkckZb2f4.HVfnqIfV/jNhsyya7kxap1GQ/kPWRR.'),
+(6, 56091655, '$2y$10$sUukkiOTW4pMCAiyfeyo0.v.HtvTnznQPTc14cnxvPTYfYPHkHbfm'),
+(7, 58324928, '$2y$10$8Xp62hbzXkKmsQxNU3tw.u28H9Agek6k.QQGc8cMeo5c9fjSqi5JK'),
+(8, 52683167, '$2y$10$Zcq5x0e3HHby0Kqcags6UexnIOdQwZVzaiouatibtuBQ7IlWZa.sG'),
+(9, 65096194, '$2y$10$HrbxBcZ3QuldlNCntfARzu6xWZY/MxqkiCdWGNwVruo43zdaN9N5S'),
+(10, 68293711, '$2y$10$4yyN3zD8wMHgLlNR6TT9we5FfIk9veB9x8c3lFzrl6zkUBGr3cb3u');
 
 --
 -- Indexes for dumped tables
@@ -297,11 +388,18 @@ ALTER TABLE `kelas`
   ADD PRIMARY KEY (`id_kelas`);
 
 --
+-- Indeks untuk tabel `logs`
+--
+ALTER TABLE `logs`
+  ADD PRIMARY KEY (`id_logs`);
+
+--
 -- Indeks untuk tabel `pembayaran`
 --
 ALTER TABLE `pembayaran`
   ADD PRIMARY KEY (`id_pembayaran`),
-  ADD KEY `id_petugas` (`id_petugas`,`id_spp`);
+  ADD KEY `id_petugas` (`id_petugas`,`id_spp`),
+  ADD KEY `nisn` (`nisn`);
 
 --
 -- Indeks untuk tabel `petugas`
@@ -326,13 +424,15 @@ ALTER TABLE `spp`
 -- Indeks untuk tabel `tagihan`
 --
 ALTER TABLE `tagihan`
-  ADD PRIMARY KEY (`id_tagihan`);
+  ADD PRIMARY KEY (`id_tagihan`),
+  ADD KEY `nisn` (`nisn`);
 
 --
 -- Indeks untuk tabel `_siswa`
 --
 ALTER TABLE `_siswa`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `nisn` (`nisn`);
 
 --
 -- AUTO_INCREMENT untuk tabel yang dibuang
@@ -342,43 +442,49 @@ ALTER TABLE `_siswa`
 -- AUTO_INCREMENT untuk tabel `bulan`
 --
 ALTER TABLE `bulan`
-  MODIFY `id_bulan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=73;
+  MODIFY `id_bulan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=121;
 
 --
 -- AUTO_INCREMENT untuk tabel `kelas`
 --
 ALTER TABLE `kelas`
-  MODIFY `id_kelas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_kelas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT untuk tabel `logs`
+--
+ALTER TABLE `logs`
+  MODIFY `id_logs` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT untuk tabel `pembayaran`
 --
 ALTER TABLE `pembayaran`
-  MODIFY `id_pembayaran` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_pembayaran` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT untuk tabel `petugas`
 --
 ALTER TABLE `petugas`
-  MODIFY `id_petugas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_petugas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT untuk tabel `spp`
 --
 ALTER TABLE `spp`
-  MODIFY `id_spp` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_spp` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT untuk tabel `tagihan`
 --
 ALTER TABLE `tagihan`
-  MODIFY `id_tagihan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_tagihan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT untuk tabel `_siswa`
 --
 ALTER TABLE `_siswa`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)

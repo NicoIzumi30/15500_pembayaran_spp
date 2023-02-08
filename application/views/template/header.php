@@ -72,6 +72,10 @@
                             class="zmdi zmdi-home"></i><span>Dashboard</span></a>
                 </li>
                 <?php } ?>
+				<?php if ($this->session->userdata('level') == 'admin') { ?>
+                <li><a href="<?= base_url('dashboard/logs') ?>"><i
+                            class="zmdi zmdi-calendar-note"></i><span>Logs</span></a></li>
+                <?php } ?>
                 <?php if ($this->session->userdata('level') == 'admin' && 'petugas') { ?>
                 <li><a href="<?= base_url('dashboard/profile') ?>"><i
                             class="zmdi zmdi-account"></i><span>Profile</span></a></li>
@@ -109,7 +113,7 @@
                 <?php } ?>
                 <?php if ($this->session->userdata('level') == 'admin' && 'petugas') { ?>
 
-                <li><a href="<?= base_url('dashboard/laporan') ?>"><i class="zmdi zmdi-task-list"></i><span>Laporan
+                <li><a href="<?= base_url('dashboard/laporan') ?>"><i class="zmdi zmdi-assignment"></i><span>Laporan
                             Transaksi</span></a>
                 </li>
                 <?php } ?>

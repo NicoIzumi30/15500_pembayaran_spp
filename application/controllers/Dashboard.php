@@ -31,8 +31,14 @@ class Dashboard extends CI_Controller
     public function update_profile()
     {
         $id = $this->session->userdata('id');
+		$username = htmlspecialchars($this->input->post('username'));
+		$query = $this->db->get_where('petugas',['id_petugas'=>$id])->row_array();
+		if($query['username'] == $username){
+			$this->form_validation->set_rules('username', 'Username', 'required');
+		}else{
+			$this->form_validation->set_rules('username', 'Username', 'required|trim|is_unique[petugas.username]', ['is_unique' => 'This username has already registered!']);
+		}
         $this->form_validation->set_rules('nama', 'Nama', 'required');
-        $this->form_validation->set_rules('username', 'Username', 'required|trim|is_unique[petugas.username]', ['is_unique' => 'This username has already registered!']);
         if ($this->form_validation->run() == false) {
             $this->session->set_flashdata('flash-gagal', 'Di Update');
             redirect('dashboard/profile');
@@ -125,6 +131,21 @@ class Dashboard extends CI_Controller
                 redirect('dashboard/petugas');
             }
         }
+		$query = "INSERT INTO spp VALUES (null,2025,300000)";
+		"UPDATE table_name
+SET column1 = value1, column2 = value2, ...
+WHERE condition; ";
+    }
+	public function logs()
+    {
+        if ($this->session->userdata('level') == 'petugas') {
+            redirect('dashboard/profile');
+        }
+        $data['logsP'] = $this->db->get_where('logs',['level'=>'admin'])->result();
+        $data['logsS'] = $this->db->get_where('logs',['level'=>'siswa'])->result();
+		$this->load->view('template/header');
+		$this->load->view('dashboard/logs',$data);
+		$this->load->view('template/footer');
     }
     public function delete_petugas($id)
     {

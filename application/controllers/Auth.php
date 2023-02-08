@@ -3,6 +3,11 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class Auth extends CI_Controller
 {
+	public function __construct()
+    {
+        parent::__construct();
+		date_default_timezone_set("Asia/Bangkok");
+    }
     public function index()
     {
         if ($this->session->userdata('username')) {
@@ -23,10 +28,20 @@ class Auth extends CI_Controller
         $user = $this->db->get_where('petugas', ['username' => $username])->row_array();
         if ($user) {
             if (password_verify($password, $user['password'])) {
+				$date_login = date("d-m-Y h:i:s A");
+				$data_logs = [
+					'username' => $user['username'],
+					'login' => $date_login,
+					'logout' => '-',
+					'level' => 'admin'
+				];
+				$this->db->insert('logs',$data_logs);
+				$lastid = $this->db->insert_id();
                 $data = [
                     'id' => $user['id_petugas'],
                     'nama_petugas' => $user['nama_petugas'],
                     'username' => $user['username'],
+					'id_logs' => $lastid,
                     'level' => $user['level'],
                     'create' => $user['created']
                 ];
@@ -87,6 +102,11 @@ class Auth extends CI_Controller
     }
     public function logout()
     {
+		$id_logs = $this->session->userdata('id_logs');
+		$date_logout = date("d-m-Y h:i:s A");
+		$this->db->set('logout', $date_logout);
+		$this->db->where('id_logs', $id_logs);
+		$this->db->update('logs');
         $this->session->unset_userdata('id');
         $this->session->unset_userdata('nama_petugas');
         $this->session->unset_userdata('level');

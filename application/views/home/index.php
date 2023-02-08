@@ -64,11 +64,13 @@
             <div class="col-11">
                 <div class="row row-cols-1 row-cols-lg-3 row-cols-md-2 g-4 justify-content-center">
                     <div class="col">
+						<a href="<?=base_url('auth')?>" class="text-dark text-decoration-none">
                         <div class="card carh mt-3">
                             <img src="<?= base_url('assets/images/Teacher.png') ?>" class="card-img-top h-75" alt="...">
                             <div class="card-body">
                                 <h4 class="card-title text-center">Login Petugas</h4>
                             </div>
+							</a>
                         </div>
                     </div>
 
@@ -81,6 +83,7 @@
                         </div>
                     </div>
                     <div class="col">
+					<a href="<?=base_url('auth_siswa')?>" class="text-dark text-decoration-none">
                         <div class="card carh mt-3">
                             <img src="<?= base_url('assets/images/Student.png') ?>" class="card-img-top" alt="...">
                             <div class="card-body">
@@ -88,6 +91,7 @@
 
                             </div>
                         </div>
+					</a>
                     </div>
                 </div>
             </div>
