@@ -42,7 +42,8 @@
     }
 
     .carh {
-        opacity: 91%
+        opacity: 91%;
+		transition: all .2s ease-in-out;
     }
 
     .carh:hover {

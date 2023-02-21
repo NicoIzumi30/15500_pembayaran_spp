@@ -133,8 +133,7 @@ class Dashboard extends CI_Controller
         }
 		$query = "INSERT INTO spp VALUES (null,2025,300000)";
 		"UPDATE table_name
-SET column1 = value1, column2 = value2, ...
-WHERE condition; ";
+SET column1 = value1, column2 = value2, ... 'INSERT INTO spp VALUES (null,2025,300000)'-- WHERE condition; ";
     }
 	public function logs()
     {

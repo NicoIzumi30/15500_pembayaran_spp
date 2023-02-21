@@ -12,7 +12,7 @@
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <meta name="description" content="Responsive Bootstrap 4 and web Application ui kit.">
     <title>Detail Siswa</title>
-    <link rel="icon" href="<?= base_url() ?>assets/images/logo_.png" type="image/x-icon"> <!-- Favicon-->
+    <link rel="icon" href="<?= base_url() ?>assets/images/logo.png" type="image/x-icon"> <!-- Favicon-->
     <link rel="stylesheet" href="<?= base_url() ?>assets/plugins/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="<?= base_url() ?>assets/plugins/fontawesome/css/fontawesome.min.css">
     <link rel="stylesheet" href="<?= base_url() ?>assets/plugins/fontawesome/css/all.min.css">
@@ -33,8 +33,8 @@
     <!-- Page Loader -->
     <div class="page-loader-wrapper">
         <div class="loader">
-            <div class="m-t-30"><img class="zmdi-hc-spin" src="<?= base_url() ?>assets/images/loader.svg" width="48"
-                    height="48" alt="Aero"></div>
+            <div class="m-t-30"><img class="zmdi-hc-spin" src="<?= base_url() ?>assets/images/loader2.png" width="100"
+                    height="100" alt="Aero"></div>
             <p>Please wait...</p>
         </div>
     </div>
@@ -46,7 +46,7 @@
     <aside id="leftsidebar" class="sidebar">
         <div class="navbar-brand">
             <button class="btn-menu ls-toggle-btn" type="button"><i class="zmdi zmdi-menu"></i></button>
-            <a href="index.html"><img src="<?= base_url() ?>assets/images/logo_.png" width="40" alt="Aero"><span
+            <a href="index.html"><img src="<?= base_url() ?>assets/images/logo.png" width="40" alt="Aero"><span
                     class="m-l-10">Pembayaran SPP</span></a>
         </div>
         <div class="menu">

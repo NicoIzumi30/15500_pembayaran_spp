@@ -8,11 +8,11 @@
         <div class="block-header">
             <div class="row">
                 <div class="col-lg-7 col-md-6 col-sm-12">
-                    <h2>Profile</h2>
+                    <h2>Laporan Pembayaran</h2>
                     <ul class="breadcrumb">
                         <li class="breadcrumb-item"><a href="index.html"><i class="zmdi zmdi-home"></i> Dashboard</a>
                         </li>
-                        <li class="breadcrumb-item active">Petugas</li>
+                        <li class="breadcrumb-item active">Laporan Pembayaran</li>
                     </ul>
                     <button class="btn btn-primary btn-icon mobile_menu" type="button"><i
                             class="zmdi zmdi-sort-amount-desc"></i></button>
@@ -28,7 +28,7 @@
                 <div class="col-lg-12">
                     <div class="card">
                         <div class="header">
-                            <h2><strong>Data</strong> Petugas </h2>
+                            <h2><strong>Data</strong> Laporan Pembayaran </h2>
                         </div>
                         <div class="body">
                             <div class="table-responsive">

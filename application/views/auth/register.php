@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
     <title>Register</title>
 
-    <link rel="shortcut icon" href="<?= base_url() ?>assets/images/logo_.png">
+    <link rel="shortcut icon" href="<?= base_url() ?>assets/images/logo.png">
 
     <link rel="stylesheet" href="<?= base_url() ?>assets/css/bootstrap.min.css">
 

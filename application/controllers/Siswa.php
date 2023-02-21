@@ -12,6 +12,7 @@ class Siswa extends CI_Controller
         $data['siswa'] = $this->M_dashboard->getSiswaWhere($nisn);
         $data['bulan'] = $this->db->get_where('bulan', ['nisn' => $nisn])->result();
         $data['tagihan'] = $this->db->get_where('tagihan', ['nisn' => $nisn])->row_array();
+        $data['pembayaran'] = $this->db->get_where('pembayaran', ['nisn' => $nisn])->result();
         $this->load->view('template/header', $data);
         $this->load->view('siswa/index', $data);
         $this->load->view('template/footer');
