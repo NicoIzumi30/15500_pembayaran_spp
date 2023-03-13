@@ -1,9 +1,9 @@
 <!doctype html>
 <html class="no-js " lang="en">
 <?php if (isset($title)) {
-    $title = $title;
+	$title = $title;
 } else {
-    $title = 'Pembayaran SPP';
+	$title = 'Pembayaran SPP';
 } ?>
 
 <head>
@@ -46,7 +46,7 @@
     <aside id="leftsidebar" class="sidebar">
         <div class="navbar-brand">
             <button class="btn-menu ls-toggle-btn" type="button"><i class="zmdi zmdi-menu"></i></button>
-            <a href="index.html"><img src="<?= base_url() ?>assets/images/logo.png" width="40" alt="Aero"><span
+            <a href="<?= base_url() ?>"><img src="<?= base_url() ?>assets/images/logo.png" width="40" alt="Aero"><span
                     class="m-l-10">Pembayaran SPP</span></a>
         </div>
         <div class="menu">
@@ -67,16 +67,16 @@
                         </div>
                     </div>
                 </li>
-                <?php if ($this->session->userdata('level') == 'admin' && 'petugas') { ?>
+                <?php if ($this->session->userdata('level') == 'admin' or 'petugas') { ?>
                 <li><a href="<?= base_url('dashboard/index') ?>"><i
                             class="zmdi zmdi-home"></i><span>Dashboard</span></a>
                 </li>
                 <?php } ?>
-				<?php if ($this->session->userdata('level') == 'admin') { ?>
+                <?php if ($this->session->userdata('level') == 'admin') { ?>
                 <li><a href="<?= base_url('dashboard/logs') ?>"><i
                             class="zmdi zmdi-calendar-note"></i><span>Logs</span></a></li>
                 <?php } ?>
-                <?php if ($this->session->userdata('level') == 'admin' && 'petugas') { ?>
+                <?php if ($this->session->userdata('level') == 'admin' or 'petugas') { ?>
                 <li><a href="<?= base_url('dashboard/profile') ?>"><i
                             class="zmdi zmdi-account"></i><span>Profile</span></a></li>
                 <?php } ?>
@@ -91,27 +91,27 @@
                 <?php } ?>
                 </li>
                 <?php if ($this->session->userdata('level') == 'admin') {
-                    echo '<li><a href="' . base_url('dashboard/kelas') . '"><i class="zmdi zmdi-apps"></i><span>Kelas</span></a>
+					echo '<li><a href="' . base_url('dashboard/kelas') . '"><i class="zmdi zmdi-apps"></i><span>Kelas</span></a>
                     </li>';
-                } ?>
+				} ?>
                 <?php if ($this->session->userdata('level') == 'admin') {
-                    echo ' <li><a href="' . base_url('dashboard/spp') . '"><i class="zmdi zmdi-assignment"></i><span>SPP</span></a>
+					echo ' <li><a href="' . base_url('dashboard/spp') . '"><i class="zmdi zmdi-assignment"></i><span>SPP</span></a>
                     </li>';
-                } ?>
+				} ?>
 
                 <?php if ($this->session->userdata('level') == 'admin') {
-                    echo ' <li><a href="' . base_url('dashboard/siswa') . '"><i
+					echo ' <li><a href="' . base_url('dashboard/siswa') . '"><i
                     class="zmdi zmdi-account-box-mail"></i><span>Siswa</span></a>
                 </li>';
-                } ?>
+				} ?>
 
-                <?php if ($this->session->userdata('level') == 'admin' && 'petugas') { ?>
+                <?php if ($this->session->userdata('level') == 'admin' or 'petugas') { ?>
 
                 <li><a href="<?= base_url('dashboard/transaksi') ?>"><i
                             class="zmdi zmdi-paypal"></i><span>Transaksi</span></a>
                 </li>
                 <?php } ?>
-                <?php if ($this->session->userdata('level') == 'admin' && 'petugas') { ?>
+                <?php if ($this->session->userdata('level') == 'admin') { ?>
 
                 <li><a href="<?= base_url('dashboard/laporan') ?>"><i class="zmdi zmdi-assignment"></i><span>Laporan
                             Transaksi</span></a>
@@ -186,7 +186,15 @@
                         <ul class="setting-list list-unstyled">
                             <li>
                                 <div class="checkbox rtl_support">
-                                    <input id="checkbox1" type="checkbox" value="rtl_view">
+
+
+
+
+
+
+
+         
+                           <input id="checkbox1" type="checkbox" value="rtl_view">
                                     <label for="checkbox1">RTL Version</label>
                                 </div>
                             </li>

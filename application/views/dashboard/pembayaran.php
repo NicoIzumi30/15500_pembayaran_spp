@@ -29,8 +29,8 @@
                         </div>
                         <div class="body">
                             <?php
-                            $sppta = $this->db->get_where('spp', ['id_spp' => $setValue['id_spp']])->row_array();
-                            ?>
+							$sppta = $this->db->get_where('spp', ['id_spp' => $setValue['id_spp']])->row_array();
+							?>
                             <div class="row p-3">
                                 <div class="col-md-8 mt-1">
                                     <form action="<?= base_url('dashboard/bayarSPP/') ?>" method="post">
@@ -45,12 +45,12 @@
                                             <input type="number" class="form-control form-control-lg" id="nisn"
                                                 name="nisn" value="<?= $setValue['nisn'] ?>" readonly>
                                         </div>
-                                        <!-- <div class="form-group">
-                                        <label for="method">Tanggal Bayar</label>
-                                        <input type="date" class="form-control form-control-lg" id="nama" name="nama"
-                                            placeholder="Tanggal Bayar"">
-                                    </div> -->
                                         <div class="form-group">
+                                            <label for="method">Tanggal Bayar</label>
+                                            <input type="date" class="form-control form-control-lg" id="tanggal"
+                                                name="tanggal" placeholder="Tanggal Bayar"">
+                                    </div>
+										<!-- <div class=" form-group">
                                             <label for="method">Tanggal Bayar</label>
                                             <div class="input-group">
                                                 <div class="input-group-prepend">
@@ -60,7 +60,7 @@
                                                 <input type="text" name="tanggal" class="form-control datetimepicker"
                                                     placeholder="Please choose date &amp; time..." data-dtp="dtp_jE2Bh">
                                             </div>
-                                        </div>
+                                        </div> -->
                                         <div class=" form-group">
                                             <label for="method">Bulan Bayar</label>
                                             <input type="text" class="form-control form-control-lg" id="bulan"
@@ -85,6 +85,7 @@
                                         </div>
                                         <input type="hidden" name="id_spp" value="<?= $sppta['id_spp'] ?>">
                                         <input type="hidden" name="id_bulan" value="<?= $setValue['id_bulan'] ?>">
+
                                         <div class="modal-footer">
                                             <button type="submit" class="btn btn-success btn-lg">Bayar Sekarang</button>
                                         </div>
